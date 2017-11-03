@@ -1,4 +1,5 @@
 rootProject.name = 'winecellar'
 
 include 'winecellar-infrastructure'
+include 'winecellar-domain'
 

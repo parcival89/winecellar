@@ -2,6 +2,8 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
+      <module name="winecellar-domain_main" target="1.8" />
+      <module name="winecellar-domain_test" target="1.8" />
       <module name="winecellar-infrastructure_main" target="1.8" />
       <module name="winecellar-infrastructure_test" target="1.8" />
       <module name="winecellar_main" target="1.8" />

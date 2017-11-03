@@ -1,0 +1,25 @@
+package be.sander.infrastructure;
+
+import be.sander.infrastructure.ddd.AggregateRoot;
+
+public abstract class NestedBuilder<T extends AggregateRoot> {
+
+    private T instance;
+    private boolean hasBeenBuild;
+
+    protected NestedBuilder(T instance){
+        this.instance = instance;
+    }
+
+    public T build(){
+        if(hasBeenBuild){
+            throw new IllegalStateException(String.format("This object %s has already been built", instance.toString()));
+        }
+        hasBeenBuild = true;
+        return getInstance();
+    }
+
+    protected T getInstance() {
+        return instance;
+    }
+}
