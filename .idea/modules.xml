@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/winecellar.iml" filepath="$PROJECT_DIR$/.idea/modules/winecellar.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/winecellar-infrastructure.iml" filepath="$PROJECT_DIR$/.idea/modules/winecellar-infrastructure.iml" group="winecellar-infrastructure" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/winecellar-infrastructure/winecellar-infrastructure_main.iml" filepath="$PROJECT_DIR$/.idea/modules/winecellar-infrastructure/winecellar-infrastructure_main.iml" group="winecellar-infrastructure" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/winecellar-infrastructure/winecellar-infrastructure_test.iml" filepath="$PROJECT_DIR$/.idea/modules/winecellar-infrastructure/winecellar-infrastructure_test.iml" group="winecellar-infrastructure" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/winecellar_main.iml" filepath="$PROJECT_DIR$/.idea/modules/winecellar_main.iml" group="winecellar" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/winecellar_test.iml" filepath="$PROJECT_DIR$/.idea/modules/winecellar_test.iml" group="winecellar" />
+    </modules>
+  </component>
+</project>
