@@ -13,14 +13,14 @@ public class Bottle extends Entity<BottleId> {
         super(id);
     }
 
-    public static class Builder extends NestedBuilder<Bottle> {
-
-        private Builder() {
-            super(new Bottle());
-        }
-
-        public static Builder createFor() {
-            return new Builder();
-        }
-    }
+//    public static class Builder extends NestedBuilder<Bottle> {
+//
+//        private Builder() {
+//            super(new Bottle());
+//        }
+//
+//        public static Builder createFor() {
+//            return new Builder();
+//        }
+//    }
 }

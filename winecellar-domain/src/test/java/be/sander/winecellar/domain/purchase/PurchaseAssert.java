@@ -1,6 +1,6 @@
 package be.sander.winecellar.domain.purchase;
 
-import be.sander.winecellar.domain.Bottle;
+import be.sander.winecellar.domain.purchase.bottle.Bottle;
 import org.assertj.core.api.AbstractAssert;
 
 import java.time.LocalDate;

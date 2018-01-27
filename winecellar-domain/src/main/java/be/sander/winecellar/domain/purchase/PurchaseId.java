@@ -6,8 +6,12 @@ import java.util.UUID;
 
 public class PurchaseId extends Id {
 
-    protected PurchaseId(String id) {
+    private PurchaseId(String id) {
         super(id);
+    }
+
+    public static PurchaseId createFor(){
+        return new PurchaseId(UUID.randomUUID().toString());
     }
 
     public static PurchaseId createFor(UUID uuid){
