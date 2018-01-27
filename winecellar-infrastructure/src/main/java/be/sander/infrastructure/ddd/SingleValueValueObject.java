@@ -1,13 +1,13 @@
 package be.sander.infrastructure.ddd;
 
-public abstract class SingleValueValueObject extends ValueObject {
-    private final String value;
+public abstract class SingleValueValueObject<T> extends ValueObject {
+    private final T value;
 
-    protected SingleValueValueObject(String value) {
+    protected SingleValueValueObject(T value) {
         this.value = value;
     }
 
-    public String getValue() {
+    public T getValue() {
         return value;
     }
 }

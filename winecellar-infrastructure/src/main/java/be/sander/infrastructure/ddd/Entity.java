@@ -1,10 +1,12 @@
 package be.sander.infrastructure.ddd;
 
-public abstract class Entity<ID extends Id> {
+import java.util.Objects;
+
+public abstract class Entity<ID extends Id> extends ValueObject {
 
     private ID id;
 
-    protected Entity(ID id){
+    protected Entity(ID id) {
         this.id = id;
     }
 
@@ -21,5 +23,10 @@ public abstract class Entity<ID extends Id> {
             return true;
 
         return this.id.equals(this.getClass().cast(obj).getId());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(47 * 37, id);
     }
 }

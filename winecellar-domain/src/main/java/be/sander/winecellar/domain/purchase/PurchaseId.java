@@ -4,7 +4,7 @@ import be.sander.infrastructure.ddd.Id;
 
 import java.util.UUID;
 
-public class PurchaseId extends Id {
+public final class PurchaseId extends Id {
 
     private PurchaseId(String id) {
         super(id);

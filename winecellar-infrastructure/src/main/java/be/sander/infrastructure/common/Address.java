@@ -5,51 +5,51 @@ import be.sander.infrastructure.ddd.ValueObject;
 
 public class Address extends ValueObject {
 
-//    private Street street;
+    private Street street;
 //    private HouseNumber number;
 //    private Municipality zipcode;
 //    private Country country;
-//
-//    private Address() {
-//    }
-//
+
+    private Address() {
+    }
+
 //    public Country getCountry() {
 //        return country;
 //    }
-//
-//    public Street getStreet() {
-//        return street;
-//    }
-//
+
+    public Street getStreet() {
+        return street;
+    }
+
 //    public HouseNumber getNumber() {
 //        return number;
 //    }
-//
+
 //    public Municipality getZipcode() {
 //        return zipcode;
 //    }
-//
-//    public static class Builder extends NestedBuilder<Address> {
-//
-//        private Builder() {
-//            super(new Address());
-//        }
-//
-//        public static Builder createFor() {
-//            return new Builder();
-//        }
-//
+
+    public static class Builder extends NestedBuilder<Address> {
+
+        private Builder() {
+            super(new Address());
+        }
+
+        public static Builder createFor() {
+            return new Builder();
+        }
+
 //        public Builder withCountry(Country country) {
-//
+
 //            return this;
 //        }
-//
-//        public Builder withStreet(Street street) {
-//
-//            return this;
-//        }
-//
-//        public Builder withNumber(Number number) {
+
+        public Builder withStreet(Street street) {
+
+            return this;
+        }
+
+//        public Builder withHouseNumber(HouseNumber number) {
 //
 //            return this;
 //        }
@@ -58,6 +58,5 @@ public class Address extends ValueObject {
 //
 //            return this;
 //        }
-//
-//    }
+    }
 }

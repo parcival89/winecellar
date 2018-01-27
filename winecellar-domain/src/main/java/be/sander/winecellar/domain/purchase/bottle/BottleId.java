@@ -4,7 +4,7 @@ import be.sander.infrastructure.ddd.Id;
 
 import java.util.UUID;
 
-public class BottleId extends Id {
+public final class BottleId extends Id {
 
     public static BottleId createFor(){
         return new BottleId(UUID.randomUUID().toString());
