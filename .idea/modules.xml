@@ -3,10 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/winecellar.iml" filepath="$PROJECT_DIR$/.idea/modules/winecellar.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/winecellar-domain.iml" filepath="$PROJECT_DIR$/.idea/modules/winecellar-domain.iml" group="winecellar-domain" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/winecellar-domain/winecellar-domain.iml" filepath="$PROJECT_DIR$/.idea/modules/winecellar-domain/winecellar-domain.iml" group="winecellar-domain" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/winecellar-domain/winecellar-domain_main.iml" filepath="$PROJECT_DIR$/.idea/modules/winecellar-domain/winecellar-domain_main.iml" group="winecellar-domain" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/winecellar-domain/winecellar-domain_test.iml" filepath="$PROJECT_DIR$/.idea/modules/winecellar-domain/winecellar-domain_test.iml" group="winecellar-domain" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/winecellar-infrastructure.iml" filepath="$PROJECT_DIR$/.idea/modules/winecellar-infrastructure.iml" group="winecellar-infrastructure" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/winecellar-infrastructure/winecellar-infrastructure.iml" filepath="$PROJECT_DIR$/.idea/modules/winecellar-infrastructure/winecellar-infrastructure.iml" group="winecellar-infrastructure" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/winecellar-infrastructure/winecellar-infrastructure_main.iml" filepath="$PROJECT_DIR$/.idea/modules/winecellar-infrastructure/winecellar-infrastructure_main.iml" group="winecellar-infrastructure" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/winecellar-infrastructure/winecellar-infrastructure_test.iml" filepath="$PROJECT_DIR$/.idea/modules/winecellar-infrastructure/winecellar-infrastructure_test.iml" group="winecellar-infrastructure" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/winecellar_main.iml" filepath="$PROJECT_DIR$/.idea/modules/winecellar_main.iml" group="winecellar" />
