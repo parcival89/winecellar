@@ -1,0 +1,16 @@
+dependencies{
+    //Javax
+    compile('javax.inject:javax.inject')
+
+    //Spring
+    compile('org.springframework.boot:spring-boot-starter-data-jpa')
+    compile('org.springframework.boot:spring-boot-starter-validation')
+
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+
+    //Hibernate
+    compile('org.hibernate:hibernate-java8')
+
+    //Apache
+    compile('org.apache.commons:commons-lang3')
+}

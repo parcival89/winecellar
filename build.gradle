@@ -1,9 +1,19 @@
-allprojects {
-    group 'be.sander.winecellar'
-    version '1.0-SNAPSHOT'
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'io.spring.gradle:dependency-management-plugin:1.0.0.RELEASE'
+    }
+}
 
+allprojects {
     apply plugin: 'java'
     apply plugin: 'idea'
+    apply plugin: 'io.spring.dependency-management'
+
+    group 'be.sander.winecellar'
+    version '1.0-SNAPSHOT'
 
     sourceCompatibility = 1.8
 
@@ -11,11 +21,17 @@ allprojects {
         mavenCentral()
     }
 
-    dependencies {
-        compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.0'
-        compile group: 'com.google.guava', name: 'guava', version: '23.3-jre'
+    dependencyManagement {
+        imports {
+            mavenBom 'io.spring.platform:platform-bom:Brussels-SR6'
+        }
+    }
 
-        testCompile group: 'junit', name: 'junit', version: '4.12'
+    dependencies {
+        compile group: 'org.apache.commons', name: 'commons-lang3'
+        compile group: 'com.google.guava', name: 'guava'
+
+        testCompile group: 'junit', name: 'junit'
         testCompile 'org.assertj:assertj-core:3.8.0'
     }
 }

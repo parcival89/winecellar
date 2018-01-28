@@ -1,10 +1,14 @@
 package be.sander.winecellar.infrastructure.ddd;
 
+import be.sander.winecellar.infrastructure.test.UnitTest;
 import org.junit.Test;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import javax.validation.ConstraintViolationException;
 
-public class EntityTest {
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
+
+public class EntityTest extends UnitTest {
 
     @Test
     public void equals_onlyChecksId() {
@@ -12,6 +16,14 @@ public class EntityTest {
         assertThat(new TestEntity(id, "extra")).isEqualTo(new TestEntity(id, null));
         assertThat(new TestEntity(id, "extra")).isEqualTo(new TestEntity(id, "extra"));
         assertThat(new TestEntity(id, "extra")).isNotEqualTo(new TestEntity(new TestId("Olifant"), "extra"));
+    }
+
+    @Test
+    public void validation_works(){
+        assertThatThrownBy(() -> new TestId(null))
+                .isInstanceOf(ConstraintViolationException.class)
+                .hasMessage("class be.sander.winecellar.infrastructure.ddd.EntityTest$TestId#value can not have value null because may not be null");
+
     }
 
     private class TestId extends Id {

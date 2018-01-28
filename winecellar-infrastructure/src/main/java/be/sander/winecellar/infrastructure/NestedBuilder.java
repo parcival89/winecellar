@@ -1,6 +1,7 @@
 package be.sander.winecellar.infrastructure;
 
 import be.sander.winecellar.infrastructure.ddd.ValueObject;
+import be.sander.winecellar.infrastructure.validation.WinecellarValidator;
 
 public abstract class NestedBuilder<T extends ValueObject> {
 
@@ -16,7 +17,10 @@ public abstract class NestedBuilder<T extends ValueObject> {
             throw new IllegalStateException(String.format("This object %s has already been built", instance.toString()));
         }
         hasBeenBuild = true;
-        return getInstance();
+
+        WinecellarValidator.validator().validate(instance);
+
+        return instance;
     }
 
     protected T getInstance() {
