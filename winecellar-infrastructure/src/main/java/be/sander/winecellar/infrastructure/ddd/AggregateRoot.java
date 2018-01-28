@@ -1,4 +1,4 @@
-package be.sander.infrastructure.ddd;
+package be.sander.winecellar.infrastructure.ddd;
 
 public abstract class AggregateRoot<ID extends Id> extends Entity<ID> {
 

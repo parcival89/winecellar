@@ -1,4 +1,4 @@
-package be.sander.infrastructure.ddd;
+package be.sander.winecellar.infrastructure.ddd;
 
 public abstract class SingleValueValueObject<T> extends ValueObject {
     private final T value;

@@ -1,8 +1,8 @@
 package be.sander.winecellar.domain.purchase;
 
-import be.sander.infrastructure.NestedBuilder;
-import be.sander.infrastructure.ddd.AggregateRoot;
 import be.sander.winecellar.domain.purchase.bottle.Bottle;
+import be.sander.winecellar.infrastructure.NestedBuilder;
+import be.sander.winecellar.infrastructure.ddd.AggregateRoot;
 
 import java.time.LocalDate;
 import java.util.Collection;

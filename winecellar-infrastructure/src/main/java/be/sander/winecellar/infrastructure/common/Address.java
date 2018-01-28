@@ -1,7 +1,7 @@
-package be.sander.infrastructure.common;
+package be.sander.winecellar.infrastructure.common;
 
-import be.sander.infrastructure.NestedBuilder;
-import be.sander.infrastructure.ddd.ValueObject;
+import be.sander.winecellar.infrastructure.NestedBuilder;
+import be.sander.winecellar.infrastructure.ddd.ValueObject;
 
 public class Address extends ValueObject {
 

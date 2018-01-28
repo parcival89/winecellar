@@ -1,7 +1,7 @@
 package be.sander.winecellar.domain.purchase;
 
-import be.sander.infrastructure.common.Address;
-import be.sander.infrastructure.ddd.ValueObject;
+import be.sander.winecellar.infrastructure.common.Address;
+import be.sander.winecellar.infrastructure.ddd.ValueObject;
 
 public final class Winedomain extends ValueObject {
 

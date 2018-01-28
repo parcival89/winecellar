@@ -1,6 +1,6 @@
 package be.sander.winecellar.domain.purchase;
 
-import be.sander.infrastructure.ddd.Id;
+import be.sander.winecellar.infrastructure.ddd.Id;
 
 import java.util.UUID;
 

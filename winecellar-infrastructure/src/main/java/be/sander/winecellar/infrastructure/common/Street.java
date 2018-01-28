@@ -1,6 +1,6 @@
-package be.sander.infrastructure.common;
+package be.sander.winecellar.infrastructure.common;
 
-import be.sander.infrastructure.ddd.SingleValueValueObject;
+import be.sander.winecellar.infrastructure.ddd.SingleValueValueObject;
 
 public class Street extends SingleValueValueObject<String> {
 

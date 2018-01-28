@@ -1,4 +1,4 @@
-package be.sander.infrastructure.ddd;
+package be.sander.winecellar.infrastructure.ddd;
 
 import static org.apache.commons.lang3.builder.EqualsBuilder.reflectionEquals;
 import static org.apache.commons.lang3.builder.HashCodeBuilder.reflectionHashCode;

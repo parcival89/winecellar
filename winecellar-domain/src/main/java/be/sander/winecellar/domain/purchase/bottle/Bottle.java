@@ -1,8 +1,8 @@
 package be.sander.winecellar.domain.purchase.bottle;
 
-import be.sander.infrastructure.NestedBuilder;
-import be.sander.infrastructure.ddd.Entity;
 import be.sander.winecellar.domain.purchase.Winedomain;
+import be.sander.winecellar.infrastructure.NestedBuilder;
+import be.sander.winecellar.infrastructure.ddd.Entity;
 
 public final class Bottle extends Entity<BottleId> {
 

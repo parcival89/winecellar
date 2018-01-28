@@ -1,6 +1,6 @@
-package be.sander.infrastructure;
+package be.sander.winecellar.infrastructure;
 
-import be.sander.infrastructure.ddd.ValueObject;
+import be.sander.winecellar.infrastructure.ddd.ValueObject;
 
 public abstract class NestedBuilder<T extends ValueObject> {
 
