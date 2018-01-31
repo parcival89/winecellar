@@ -2,9 +2,14 @@ package be.sander.winecellar.domain.purchase.bottle;
 
 import be.sander.winecellar.domain.purchase.Winedomain;
 
+import static be.sander.winecellar.domain.purchase.bottle.Price.createFor;
+
 public class BottleTestBuilder {
 
+    private static final Price DEFAULT_PRICE = createFor(25, 99);
     private Bottle.Builder builder;
+
+    private Price price = DEFAULT_PRICE;
 
     private BottleTestBuilder() {
         builder = Bottle.Builder.createFor();
@@ -15,7 +20,9 @@ public class BottleTestBuilder {
     }
 
     public Bottle build() {
-        return builder.build();
+        return builder
+                .withPrice(price)
+                .build();
     }
 
     public BottleTestBuilder withWinedomain(Winedomain winedomain) {
@@ -24,7 +31,7 @@ public class BottleTestBuilder {
     }
 
     public BottleTestBuilder withPrice(Price price) {
-        builder.withPrice(price);
+        this.price = price;
         return this;
     }
 

@@ -1,0 +1,6 @@
+sourceCompatibility = 1.8
+
+dependencies {
+    compile("javax.inject:javax.inject")
+    compile("org.springframework:spring-beans")
+}

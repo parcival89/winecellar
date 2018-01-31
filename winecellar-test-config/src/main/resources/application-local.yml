@@ -1,0 +1,10 @@
+server.port: 8765
+spring:
+  datasource:
+    url: jdbc:postgresql:///postgres
+    username: admin
+    password: admin
+  jpa:
+    properties:
+      hibernate:
+        default_schema: public

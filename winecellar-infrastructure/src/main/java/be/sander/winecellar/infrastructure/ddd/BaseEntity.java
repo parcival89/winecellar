@@ -2,11 +2,11 @@ package be.sander.winecellar.infrastructure.ddd;
 
 import java.util.Objects;
 
-public abstract class Entity<ID extends Id> extends ValueObject {
+public abstract class BaseEntity<ID extends Id> extends ValueObject {
 
     private ID id;
 
-    protected Entity(ID id) {
+    protected BaseEntity(ID id) {
         this.id = id;
     }
 

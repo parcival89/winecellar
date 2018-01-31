@@ -2,12 +2,21 @@ package be.sander.winecellar.domain.purchase.bottle;
 
 import be.sander.winecellar.domain.purchase.Winedomain;
 import be.sander.winecellar.infrastructure.NestedBuilder;
-import be.sander.winecellar.infrastructure.ddd.Entity;
+import be.sander.winecellar.infrastructure.ddd.BaseEntity;
 
-public final class Bottle extends Entity<BottleId> {
+import javax.persistence.AttributeOverride;
+import javax.persistence.Column;
+import javax.validation.constraints.NotNull;
 
+@javax.persistence.Entity
+public final class Bottle extends BaseEntity<BottleId> {
+
+    private static final String COLUMN_PRICE = "PRICE";
     private Winedomain winedomain;
     private Edition edition;
+
+    @NotNull
+    @AttributeOverride(name = "value", column = @Column(name = COLUMN_PRICE))
     private Price price;
 
     private Bottle() {

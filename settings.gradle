@@ -1,5 +1,8 @@
 rootProject.name = 'winecellar'
 
+include 'winecellar-config'
+include 'winecellar-test-config'
+include 'winecellar-db-scripts'
 include 'winecellar-infrastructure'
 include 'winecellar-domain'
 

@@ -1,7 +1,8 @@
 package be.sander.winecellar.infrastructure;
 
 import be.sander.winecellar.infrastructure.ddd.ValueObject;
-import be.sander.winecellar.infrastructure.validation.WinecellarValidator;
+
+import static be.sander.winecellar.infrastructure.validation.WinecellarValidator.validator;
 
 public abstract class NestedBuilder<T extends ValueObject> {
 
@@ -18,7 +19,7 @@ public abstract class NestedBuilder<T extends ValueObject> {
         }
         hasBeenBuild = true;
 
-        WinecellarValidator.validator().validate(instance);
+        validator().validate(instance);
 
         return instance;
     }

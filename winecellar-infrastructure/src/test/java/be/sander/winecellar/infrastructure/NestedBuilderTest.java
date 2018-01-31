@@ -2,22 +2,29 @@ package be.sander.winecellar.infrastructure;
 
 import be.sander.winecellar.infrastructure.ddd.ValueObject;
 import be.sander.winecellar.infrastructure.test.UnitTest;
-import org.assertj.core.api.Assertions;
 import org.junit.Test;
 
 import javax.validation.ConstraintViolationException;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 public class NestedBuilderTest extends UnitTest {
 
     @Test
+    public void builder_buildsObject() {
+        SomeEntity actual = SomeEntity.Builder.createFor().withField1("SomeField").withField2(1).build();
+        assertThat(actual.getField1()).isEqualTo("SomeField");
+        assertThat(actual.getField2()).isEqualTo(1);
+    }
+
+    @Test
     public void builder_triggersValidation() {
         assertThatThrownBy(() -> SomeEntity.Builder.createFor().withField1(null).withField2(1).build())
-            .isInstanceOf(ConstraintViolationException.class)
-            .hasMessage("class be.sander.winecellar.infrastructure.SomeEntity#field1 can not have value null because may not be null");
+                .isInstanceOf(ConstraintViolationException.class)
+                .hasMessage("class be.sander.winecellar.infrastructure.SomeEntity#field1 can not have value null because may not be null");
     }
 
     @Test

@@ -1,0 +1,22 @@
+server:
+  context-path: /winecellar
+
+spring:
+  application.name: winecellar
+  profiles.active: server
+  datasource.initalize: false
+  jpa:
+    show-sql: false
+    properties:
+      hibernate:
+#        default_schema:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql : true
+  mvc.favicon.enabled: false
+
+flyway.enabled: false
+
+management.security.enabled: false
+
+#spring.jpa.hibernate.ddl-auto: create-drop
+spring.datasource.driver-class-name: org.postgresql.Driver

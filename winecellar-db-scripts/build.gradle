@@ -1,0 +1,17 @@
+buildscript {
+    dependencies {
+        classpath("org.postgresql:postgresql:9.4-1206-jdbc42")
+    }
+}
+
+plugins {
+    id "org.flywaydb.flyway" version "5.0.7"
+}
+
+
+flyway {
+    url = 'jdbc:postgresql://localhost:5432/postgres'
+    user = 'admin'
+    password = 'admin'
+    schemas = ['public']
+}

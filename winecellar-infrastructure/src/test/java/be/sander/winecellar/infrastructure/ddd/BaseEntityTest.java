@@ -8,21 +8,21 @@ import javax.validation.ConstraintViolationException;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
-public class EntityTest extends UnitTest {
+public class BaseEntityTest extends UnitTest {
 
     @Test
     public void equals_onlyChecksId() {
         TestId id = new TestId("id 1");
-        assertThat(new TestEntity(id, "extra")).isEqualTo(new TestEntity(id, null));
-        assertThat(new TestEntity(id, "extra")).isEqualTo(new TestEntity(id, "extra"));
-        assertThat(new TestEntity(id, "extra")).isNotEqualTo(new TestEntity(new TestId("Olifant"), "extra"));
+        assertThat(new TestBaseEntity(id, "extra")).isEqualTo(new TestBaseEntity(id, null));
+        assertThat(new TestBaseEntity(id, "extra")).isEqualTo(new TestBaseEntity(id, "extra"));
+        assertThat(new TestBaseEntity(id, "extra")).isNotEqualTo(new TestBaseEntity(new TestId("Olifant"), "extra"));
     }
 
     @Test
-    public void validation_works(){
+    public void validation_works() {
         assertThatThrownBy(() -> new TestId(null))
                 .isInstanceOf(ConstraintViolationException.class)
-                .hasMessage("class be.sander.winecellar.infrastructure.ddd.EntityTest$TestId#value can not have value null because may not be null");
+                .hasMessage("class be.sander.winecellar.infrastructure.ddd.BaseEntityTest$TestId#value can not have value null because may not be null");
 
     }
 
@@ -32,10 +32,10 @@ public class EntityTest extends UnitTest {
         }
     }
 
-    private class TestEntity extends Entity<TestId> {
+    private class TestBaseEntity extends BaseEntity<TestId> {
         private String extraField;
 
-        TestEntity(TestId id, String extraField) {
+        TestBaseEntity(TestId id, String extraField) {
             super(id);
             this.extraField = extraField;
         }
