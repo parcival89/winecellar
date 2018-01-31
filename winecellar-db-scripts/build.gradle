@@ -1,13 +1,12 @@
-buildscript {
-    dependencies {
-        classpath("org.postgresql:postgresql:9.4-1206-jdbc42")
-    }
-}
-
 plugins {
     id "org.flywaydb.flyway" version "5.0.7"
 }
 
+dependencies {
+    //project dependencies
+    compile project(':winecellar-config')
+    testCompile project(':winecellar-test-config')
+}
 
 flyway {
     url = 'jdbc:postgresql://localhost:5432/postgres'

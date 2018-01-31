@@ -31,18 +31,18 @@ public class WinecellarValidator {
         Set<ConstraintViolation<Object>> violations = validator.validate(object);
         if (!violations.isEmpty()) {
             throw new ConstraintViolationException(
-                    constraintViolationErrorMessage(violations),
-                    new HashSet<ConstraintViolation<?>>(violations));
+                constraintViolationErrorMessage(violations),
+                new HashSet<ConstraintViolation<?>>(violations));
         }
     }
 
     private String constraintViolationErrorMessage(Set<ConstraintViolation<Object>> violations) {
         return violations.stream()
-                .map(violation -> format("%s#%s can not have value %s because %s",
-                        violation.getRootBeanClass(),
-                        violation.getPropertyPath(),
-                        violation.getInvalidValue(),
-                        violation.getMessage()))
-                .collect(Collectors.joining(", "));
+            .map(violation -> format("%s#%s can not have value %s because %s",
+                violation.getRootBeanClass(),
+                violation.getPropertyPath(),
+                violation.getInvalidValue(),
+                violation.getMessage()))
+            .collect(Collectors.joining(", "));
     }
 }

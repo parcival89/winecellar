@@ -10,11 +10,11 @@ public final class PurchaseId extends Id {
         super(id);
     }
 
-    public static PurchaseId createFor(){
+    public static PurchaseId createFor() {
         return new PurchaseId(UUID.randomUUID().toString());
     }
 
-    public static PurchaseId createFor(UUID uuid){
+    public static PurchaseId createFor(UUID uuid) {
         return new PurchaseId(uuid.toString());
     }
 }

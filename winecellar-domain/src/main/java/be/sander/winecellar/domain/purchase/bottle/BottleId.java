@@ -6,11 +6,11 @@ import java.util.UUID;
 
 public final class BottleId extends Id {
 
-    public static BottleId createFor(){
+    public static BottleId createFor() {
         return new BottleId(UUID.randomUUID().toString());
     }
 
-    public static BottleId createFor(String id){
+    public static BottleId createFor(String id) {
         return new BottleId(id);
     }
 

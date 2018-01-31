@@ -1,3 +1,14 @@
 dependencies {
+    //project depedencies
+    compile project(':winecellar-config')
+    testCompile project(':winecellar-test-config')
+    compile project(':winecellar-db-scripts')
     compile project(':winecellar-infrastructure')
+    testCompile project(':winecellar-infrastructure').sourceSets.test.output
+
+    //Spring
+    compile('org.springframework.boot:spring-boot-starter-data-jpa')
+    compile('org.springframework.boot:spring-boot-starter-validation')
+    //kan weggelaten worden ???
+    testCompile('org.springframework.boot:spring-boot-starter-test')
 }

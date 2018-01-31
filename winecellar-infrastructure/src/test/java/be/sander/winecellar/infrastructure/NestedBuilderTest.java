@@ -23,8 +23,8 @@ public class NestedBuilderTest extends UnitTest {
     @Test
     public void builder_triggersValidation() {
         assertThatThrownBy(() -> SomeEntity.Builder.createFor().withField1(null).withField2(1).build())
-                .isInstanceOf(ConstraintViolationException.class)
-                .hasMessage("class be.sander.winecellar.infrastructure.SomeEntity#field1 can not have value null because may not be null");
+            .isInstanceOf(ConstraintViolationException.class)
+            .hasMessage("class be.sander.winecellar.infrastructure.SomeEntity#field1 can not have value null because may not be null");
     }
 
     @Test
@@ -32,8 +32,8 @@ public class NestedBuilderTest extends UnitTest {
         SomeEntity.Builder builder = SomeEntity.Builder.createFor().withField1("").withField2(1);
         builder.build();
         assertThatThrownBy(builder::build)
-                .isInstanceOf(IllegalStateException.class)
-                .hasMessage("This object be.sander.winecellar.infrastructure.SomeEntity@d75e0 has already been built");
+            .isInstanceOf(IllegalStateException.class)
+            .hasMessage("This object be.sander.winecellar.infrastructure.SomeEntity@d75e0 has already been built");
     }
 }
 

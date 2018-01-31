@@ -20,14 +20,14 @@ public class PurchaseTest {
         Bottle bottle2 = BottleTestBuilder.aBottle().build();
         Bottle bottle3 = BottleTestBuilder.aBottle().build();
         Purchase purchase = Purchase.Builder.createFor(purchaseId)
-                .withBottles(newArrayList(bottle1, bottle2, bottle3))
-                .withDate(now)
-                .build();
+            .withBottles(newArrayList(bottle1, bottle2, bottle3))
+            .withDate(now)
+            .build();
 
         assertThat(purchase)
-                .hasAListOfBottles()
-                .withElementsInIt(3)
-                .containingOnly(bottle1, bottle2, bottle3)
-                .hasAPurchaseDateOf(now);
+            .hasAListOfBottles()
+            .withElementsInIt(3)
+            .containingOnly(bottle1, bottle2, bottle3)
+            .hasAPurchaseDateOf(now);
     }
 }

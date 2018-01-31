@@ -14,7 +14,7 @@ public class PurchaseAssert extends AbstractAssert<PurchaseAssert, Purchase> {
 
     public PurchaseAssert hasAListOfBottles() {
         assertThat(actual.getBottles())
-                .isNotNull();
+            .isNotNull();
         return this;
     }
 

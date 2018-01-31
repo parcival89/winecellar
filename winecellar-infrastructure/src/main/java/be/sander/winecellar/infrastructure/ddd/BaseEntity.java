@@ -15,14 +15,14 @@ public abstract class BaseEntity<ID extends Id> extends ValueObject {
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (obj == null)
+    public boolean equals(Object other) {
+        if (other == null)
             return false;
 
-        if (obj == this)
+        if (other == this)
             return true;
 
-        return this.id.equals(this.getClass().cast(obj).getId());
+        return this.id.equals(this.getClass().cast(other).getId());
     }
 
     @Override

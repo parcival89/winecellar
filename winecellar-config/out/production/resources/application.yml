@@ -9,14 +9,10 @@ spring:
     show-sql: false
     properties:
       hibernate:
-#        default_schema:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
+        default_schema: public
         format_sql : true
   mvc.favicon.enabled: false
 
 flyway.enabled: false
 
 management.security.enabled: false
-
-#spring.jpa.hibernate.ddl-auto: create-drop
-spring.datasource.driver-class-name: org.postgresql.Driver

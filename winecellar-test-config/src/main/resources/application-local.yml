@@ -1,7 +1,13 @@
+db:
+    driver: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/postgres
+    schema: public
+
 server.port: 8765
 spring:
   datasource:
-    url: jdbc:postgresql:///postgres
+    url: ${db.url}
+    driver: ${db.driver}
     username: admin
     password: admin
   jpa:

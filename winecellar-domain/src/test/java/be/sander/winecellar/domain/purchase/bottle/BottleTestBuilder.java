@@ -21,8 +21,8 @@ public class BottleTestBuilder {
 
     public Bottle build() {
         return builder
-                .withPrice(price)
-                .build();
+            .withPrice(price)
+            .build();
     }
 
     public BottleTestBuilder withWinedomain(Winedomain winedomain) {

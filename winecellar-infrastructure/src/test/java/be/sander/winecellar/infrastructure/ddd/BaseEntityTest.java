@@ -21,8 +21,8 @@ public class BaseEntityTest extends UnitTest {
     @Test
     public void validation_works() {
         assertThatThrownBy(() -> new TestId(null))
-                .isInstanceOf(ConstraintViolationException.class)
-                .hasMessage("class be.sander.winecellar.infrastructure.ddd.BaseEntityTest$TestId#value can not have value null because may not be null");
+            .isInstanceOf(ConstraintViolationException.class)
+            .hasMessage("class be.sander.winecellar.infrastructure.ddd.BaseEntityTest$TestId#value can not have value null because may not be null");
 
     }
 

@@ -1,4 +1,9 @@
-dependencies{
+dependencies {
+    //project depedencies
+    compile project(':winecellar-config')
+    testCompile project(':winecellar-test-config')
+    compile project(':winecellar-db-scripts')
+
     //Spring
     compile('org.springframework.boot:spring-boot-starter-data-jpa')
     compile('org.springframework.boot:spring-boot-starter-validation')
@@ -20,4 +25,7 @@ dependencies{
     //Apache
     compile('org.apache.commons:commons-lang3')
 //    compile('org.apache.commons:commons-validator')
+
+    //postgres
+    compile group: 'org.postgresql', name: 'postgresql', version: '42.1.4'
 }

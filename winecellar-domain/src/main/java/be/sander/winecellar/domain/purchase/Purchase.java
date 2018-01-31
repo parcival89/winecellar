@@ -24,13 +24,13 @@ public final class Purchase extends AggregateRoot<PurchaseId> {
         return date;
     }
 
-    public static class Builder extends NestedBuilder<Purchase>{
+    public static class Builder extends NestedBuilder<Purchase> {
 
-        private Builder(PurchaseId purchaseId){
+        private Builder(PurchaseId purchaseId) {
             super(new Purchase(purchaseId));
         }
 
-        public static Builder createFor(PurchaseId purchaseId){
+        public static Builder createFor(PurchaseId purchaseId) {
             return new Builder(purchaseId);
         }
 
