@@ -1,10 +1,9 @@
 package be.sander.winecellar.infrastructure.ddd;
 
-import org.apache.commons.lang3.builder.ToStringStyle;
-
 import static org.apache.commons.lang3.builder.EqualsBuilder.reflectionEquals;
 import static org.apache.commons.lang3.builder.HashCodeBuilder.reflectionHashCode;
 import static org.apache.commons.lang3.builder.ToStringBuilder.reflectionToString;
+import static org.apache.commons.lang3.builder.ToStringStyle.SHORT_PREFIX_STYLE;
 
 public abstract class ValueObject {
 
@@ -20,6 +19,6 @@ public abstract class ValueObject {
 
     @Override
     public String toString() {
-        return reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);
+        return reflectionToString(this, SHORT_PREFIX_STYLE);
     }
 }

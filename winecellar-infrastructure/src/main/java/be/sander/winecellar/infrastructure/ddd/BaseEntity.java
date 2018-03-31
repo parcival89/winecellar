@@ -1,32 +1,28 @@
 package be.sander.winecellar.infrastructure.ddd;
 
+import javax.persistence.MappedSuperclass;
 import java.util.Objects;
 
-public abstract class BaseEntity<ID extends Id> extends ValueObject {
+@MappedSuperclass
+public abstract class BaseEntity<ID extends Id> {
 
-    private ID id;
-
-    protected BaseEntity(ID id) {
-        this.id = id;
-    }
-
-    public ID getId() {
-        return id;
-    }
+    public abstract ID getId();
 
     @Override
     public boolean equals(Object other) {
-        if (other == null)
-            return false;
-
-        if (other == this)
+        if (other == this) {
             return true;
+        }
 
-        return this.id.equals(this.getClass().cast(other).getId());
+        if (other == null || this.getClass() != other.getClass() || this.getId() == null) {
+            return false;
+        }
+
+        return this.getId().equals(((BaseEntity<?>) other).getId());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(47 * 37, id);
+        return Objects.hash(getId());
     }
 }

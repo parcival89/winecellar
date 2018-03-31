@@ -27,5 +27,8 @@ dependencies {
 //    compile('org.apache.commons:commons-validator')
 
     //postgres
-    compile group: 'org.postgresql', name: 'postgresql', version: '42.1.4'
+//    compile group: 'org.postgresql', name: 'postgresql', version: '42.1.4'
+
+    // TODO [Sander] : in memory db gebruiken tot ik postgres gefixed krijg
+    compile("com.h2database:h2")
 }

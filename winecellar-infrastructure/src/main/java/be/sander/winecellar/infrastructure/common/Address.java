@@ -32,7 +32,11 @@ public class Address extends ValueObject {
     public static class Builder extends NestedBuilder<Address> {
 
         private Builder() {
-            super(new Address());
+        }
+
+        @Override
+        protected Address createInstance() {
+            return new Address();
         }
 
         public static Builder createFor() {

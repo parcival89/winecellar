@@ -6,13 +6,14 @@ import static be.sander.winecellar.domain.purchase.bottle.Price.createFor;
 
 public class BottleTestBuilder {
 
-    private static final Price DEFAULT_PRICE = createFor(25, 99);
+    private static final Price DEFAULT_PRICE = createFor(2599L);
     private Bottle.Builder builder;
 
     private Price price = DEFAULT_PRICE;
 
     private BottleTestBuilder() {
-        builder = Bottle.Builder.createFor();
+        builder = Bottle.Builder.createFor()
+            .withId(BottleId.createFor());
     }
 
     public static BottleTestBuilder aBottle() {

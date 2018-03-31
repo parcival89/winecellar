@@ -2,8 +2,10 @@ package be.sander.winecellar.domain.purchase.bottle;
 
 import be.sander.winecellar.infrastructure.ddd.Id;
 
+import javax.persistence.Embeddable;
 import java.util.UUID;
 
+@Embeddable
 public final class BottleId extends Id {
 
     public static BottleId createFor() {

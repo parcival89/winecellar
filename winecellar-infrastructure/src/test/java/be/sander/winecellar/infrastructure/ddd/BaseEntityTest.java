@@ -33,11 +33,19 @@ public class BaseEntityTest extends UnitTest {
     }
 
     private class TestBaseEntity extends BaseEntity<TestId> {
+        @javax.persistence.Id
+        private TestId id;
+
         private String extraField;
 
         TestBaseEntity(TestId id, String extraField) {
-            super(id);
+            this.id = id;
             this.extraField = extraField;
+        }
+
+        @Override
+        public TestId getId() {
+            return this.id;
         }
     }
 }

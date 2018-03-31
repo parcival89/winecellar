@@ -2,18 +2,31 @@ package be.sander.winecellar.domain.purchase.bottle;
 
 import be.sander.winecellar.infrastructure.ddd.ValueObject;
 
+import javax.persistence.Access;
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+
+import static javax.persistence.AccessType.FIELD;
+
 //TODO [Sander] validatie op getallen
+@Embeddable
+@Access(FIELD)
 public class Price extends ValueObject {
+    public static final String COLUMN_PRICE = "PRICE";
 
-    private long number;
-    private long centimes;
 
-    private Price(long number, long centimes) {
-        this.number = number;
-        this.centimes = centimes;
+    public static Price createFor(long centimes) {
+        return new Price(centimes);
     }
 
-    public static Price createFor(long number, long centimes) {
-        return new Price(number, centimes);
+    @Column(name = COLUMN_PRICE)
+    @NotNull
+    @Min(0)
+    private Long centimes;
+
+    private Price(Long centimes) {
+        this.centimes = centimes;
     }
 }

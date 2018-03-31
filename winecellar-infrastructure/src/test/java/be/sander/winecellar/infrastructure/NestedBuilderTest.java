@@ -33,11 +33,11 @@ public class NestedBuilderTest extends UnitTest {
         builder.build();
         assertThatThrownBy(builder::build)
             .isInstanceOf(IllegalStateException.class)
-            .hasMessage("This object be.sander.winecellar.infrastructure.SomeEntity@d75e0 has already been built");
+            .hasMessage("This object SomeEntity[field1=,field2=1] has already been built");
     }
 }
 
-class SomeEntity extends ValueObject {
+final class SomeEntity extends ValueObject {
 
     @NotNull
     private String field1;
@@ -62,16 +62,20 @@ class SomeEntity extends ValueObject {
         }
 
         private Builder() {
-            super(new SomeEntity());
+        }
+
+        @Override
+        protected SomeEntity createInstance() {
+            return new SomeEntity();
         }
 
         public Builder withField1(String field1) {
-            this.getInstance().field1 = field1;
+            this.instance().field1 = field1;
             return this;
         }
 
         public Builder withField2(int field2) {
-            this.getInstance().field2 = field2;
+            this.instance().field2 = field2;
             return this;
         }
     }
