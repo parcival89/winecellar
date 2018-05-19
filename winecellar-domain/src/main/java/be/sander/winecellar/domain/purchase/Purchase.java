@@ -1,15 +1,22 @@
 package be.sander.winecellar.domain.purchase;
 
 import be.sander.winecellar.domain.purchase.bottle.Bottle;
+import be.sander.winecellar.domain.purchase.command.CreatePurchase;
 import be.sander.winecellar.infrastructure.NestedBuilder;
 import be.sander.winecellar.infrastructure.ddd.AggregateRoot;
+import be.sander.winecellar.infrastructure.ddd.Command;
+import be.sander.winecellar.infrastructure.ddd.CommandHandler;
+import be.sander.winecellar.infrastructure.ddd.CommandHandlerImpl;
 
 import javax.persistence.*;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 import java.util.Collection;
+import java.util.List;
 
+import static be.sander.winecellar.infrastructure.validation.WinecellarValidator.validator;
+import static com.google.common.collect.Lists.newArrayList;
 import static javax.persistence.FetchType.EAGER;
 
 @Entity
@@ -29,13 +36,19 @@ public final class Purchase extends AggregateRoot<PurchaseId> {
     @OrderColumn(name = "ORDER_ID")
     @CollectionTable(
         name = Bottle.TABLE_NAME,
-        joinColumns = @JoinColumn(name = "OVEREENKOMST_ID", referencedColumnName = TABLE_ID)
+        joinColumns = @JoinColumn(name = "PURCHASE_ID", referencedColumnName = TABLE_ID)
     )
     @Valid
     private Collection<Bottle> bottles;
 
     private LocalDate date;
     //private Location place;
+
+    @Transient
+    private List<CommandHandler> commandHandlers =
+        newArrayList(
+            new CommandHandlerImpl<>(CreatePurchase.class, this::createPurchase)
+        );
 
     private Purchase() {
     }
@@ -50,6 +63,17 @@ public final class Purchase extends AggregateRoot<PurchaseId> {
 
     public LocalDate getDate() {
         return date;
+    }
+
+    public void execute(Command<PurchaseId> command) {
+        this.commandHandlers.stream()
+            .filter(commandHandler -> commandHandler.canHandle(command))
+            .forEach(commandHandler -> commandHandler.handle(command));
+        validator().validate(this);
+    }
+
+    private Purchase createPurchase(CreatePurchase command) {
+        return this;
     }
 
     public static class Builder extends NestedBuilder<Purchase> {
