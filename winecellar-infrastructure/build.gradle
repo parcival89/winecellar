@@ -1,34 +1,23 @@
 dependencies {
-    //project depedencies
-    compile project(':winecellar-config')
-    testCompile project(':winecellar-test-config')
-    compile project(':winecellar-db-scripts')
-
-    //Spring
-    compile('org.springframework.boot:spring-boot-starter-data-jpa')
-    compile('org.springframework.boot:spring-boot-starter-validation')
-
-    //Guava
-    compile('com.google.guava:guava')
-
-    //Javax
-    compile('javax.inject:javax.inject')
-
-    testCompile('org.springframework.boot:spring-boot-starter-test')
-
-    //Hibernate
-    compile('org.hibernate:hibernate-java8')
+    implementation project(':winecellar-config')
+    implementation project(':winecellar-db-scripts')
+    implementation('org.springframework.boot:spring-boot-starter-data-jpa')
+    implementation('org.springframework.boot:spring-boot-starter-validation')
+    implementation('com.google.guava:guava')
+    implementation('javax.inject:javax.inject')
+    implementation('org.hibernate:hibernate-java8')
+    implementation('org.apache.commons:commons-lang3')
+    
+    testImplementation project(':winecellar-test-config')
+    testImplementation('org.springframework.boot:spring-boot-starter-test')
 
     //flyway
 //    testCompile('org.flyway:flyway-core')
 
-    //Apache
-    compile('org.apache.commons:commons-lang3')
-//    compile('org.apache.commons:commons-validator')
+//    implementation('org.apache.commons:commons-validator')
 
-    //postgres
-//    compile group: 'org.postgresql', name: 'postgresql', version: '42.1.4'
+//    implementation group: 'org.postgresql', name: 'postgresql', version: '42.1.4'
 
     // TODO [Sander] : in memory db gebruiken tot ik postgres gefixed krijg
-    compile("com.h2database:h2")
+    implementation("com.h2database:h2")
 }

@@ -3,9 +3,9 @@ plugins {
 }
 
 dependencies {
-    //project dependencies
-    compile project(':winecellar-config')
-    testCompile project(':winecellar-test-config')
+    implementation project(':winecellar-config')
+
+    testImplementation project(':winecellar-test-config')
 }
 
 flyway {
