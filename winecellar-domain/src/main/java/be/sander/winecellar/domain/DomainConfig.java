@@ -1,9 +1,9 @@
-package be.sander.winecellar.container;
+package be.sander.winecellar.domain;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
-@ComponentScan
 @Configuration
-public class WinecellarAutoConfiguration {
+@ComponentScan
+public class DomainConfig {
 }

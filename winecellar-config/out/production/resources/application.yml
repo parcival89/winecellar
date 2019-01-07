@@ -1,18 +1,2 @@
-server:
-  context-path: /winecellar
 
-spring:
-  application.name: winecellar
-  profiles.active: server
-  datasource.initalize: false
-  jpa:
-    show-sql: false
-    properties:
-      hibernate:
-        default_schema: public
-        format_sql : true
-  mvc.favicon.enabled: false
 
-flyway.enabled: false
-
-management.security.enabled: false

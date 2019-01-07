@@ -1,5 +1,4 @@
 dependencies {
-    implementation project(':winecellar-config')
     implementation project(':winecellar-db-scripts')
     implementation project(':winecellar-infrastructure')
     implementation('org.springframework.boot:spring-boot-starter-data-jpa')

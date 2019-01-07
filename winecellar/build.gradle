@@ -1,0 +1,9 @@
+application{
+    mainClassName = 'be.sander.winecellar.container.Application'
+}
+
+apply plugin: 'org.springframework.boot'
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+}

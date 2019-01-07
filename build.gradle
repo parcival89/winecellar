@@ -1,18 +1,25 @@
 plugins {
-    id 'java'
     id 'application'
     id 'org.springframework.boot' version '2.1.1.RELEASE'
 }
 
 allprojects {
+    sourceCompatibility = 10
+
     repositories {
         jcenter()
     }
 
     apply plugin: 'java'
     apply plugin: 'idea'
+//    apply plugin: 'org.springframework.boot'
     apply plugin: 'io.spring.dependency-management'
-    apply plugin: 'org.springframework.boot'
+
+    dependencyManagement{
+        imports{
+            mavenBom 'org.springframework.boot:spring-boot-dependencies:2.1.1.RELEASE'
+        }
+    }
 
     dependencies {
         implementation 'javax.inject:javax.inject:1'
